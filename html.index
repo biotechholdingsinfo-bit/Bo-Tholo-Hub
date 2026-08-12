@@ -1,0 +1,348 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bo Tholo Mining & Governance Hub - Northern Cape mining, traditional governance, community trusts, projects and public records.">
+
+    <meta name="robots" content="index, follow">
+
+    <title>Bo Tholo Mining & Governance Hub</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<header class="reg-nav">
+
+    <div class="seal" aria-hidden="true">
+        BT
+    </div>
+
+    <div class="brandblock">
+        <div class="k">Bo Tholo</div>
+        <div class="s">Mining & Governance Hub</div>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="kings.html">Leadership</a>
+        <a href="demographics.html">Demographics</a>
+        <a href="mines.html">Mines</a>
+        <a href="map.html">Map</a>
+        <a href="trusts.html">Trusts</a>
+        <a href="projects.html">Projects</a>
+        <a href="permits.html">Permits</a>
+        <a href="documents.html">Documents</a>
+        <a href="contacts.html">Contacts</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="seal-big" aria-hidden="true">
+            BO<br>
+            THOLO
+        </div>
+
+        <div>
+
+            <span class="entry-head eyebrow">
+                NORTHERN CAPE · PUBLIC INFORMATION HUB
+            </span>
+
+            <h1>
+                Mining, Governance & Community Information
+            </h1>
+
+            <p class="lede">
+                A structured information platform bringing together
+                mining operations, traditional leadership, community
+                trusts, development projects, permits, documents and
+                relevant demographic information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div class="notice">
+
+        <strong>Development version:</strong>
+        This platform is currently an initial prototype.
+        Some records contain placeholder information and must be
+        verified against authoritative source documents before being
+        treated as an official register.
+
+    </div>
+
+
+    <section>
+
+        <div class="section-label">
+            PLATFORM OVERVIEW
+        </div>
+
+        <div class="grid cols-4">
+
+            <a class="card stat" href="mines.html">
+                <div class="num" id="mine-count">—</div>
+                <div class="label">Mining Records</div>
+                <div class="sub">
+                    Operational and prospecting records
+                </div>
+            </a>
+
+
+            <a class="card stat" href="trusts.html">
+                <div class="num" id="trust-count">—</div>
+                <div class="label">Community Trusts</div>
+                <div class="sub">
+                    Community ownership and governance
+                </div>
+            </a>
+
+
+            <a class="card stat" href="projects.html">
+                <div class="num" id="project-count">—</div>
+                <div class="label">Development Projects</div>
+                <div class="sub">
+                    Community development initiatives
+                </div>
+            </a>
+
+
+            <a class="card stat" href="permits.html">
+                <div class="num" id="permit-count">—</div>
+                <div class="label">Permit Records</div>
+                <div class="sub">
+                    Mining and prospecting records
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <div class="section-label">
+            EXPLORE THE HUB
+        </div>
+
+        <div class="grid cols-3">
+
+
+            <a class="entity" href="kings.html">
+
+                <h3>
+                    Traditional Leadership
+                </h3>
+
+                <p>
+                    Reference information relating to traditional
+                    leadership, recognition records and governance
+                    structures.
+                </p>
+
+                <span class="link-out">
+                    View leadership records →
+                </span>
+
+            </a>
+
+
+            <a class="entity" href="mines.html">
+
+                <h3>
+                    Mining Operations
+                </h3>
+
+                <p>
+                    Browse mining and prospecting records, operators,
+                    commodities, districts and associated community
+                    structures.
+                </p>
+
+                <span class="link-out">
+                    View mining records →
+                </span>
+
+            </a>
+
+
+            <a class="entity" href="map.html">
+
+                <h3>
+                    Geographic Map
+                </h3>
+
+                <p>
+                    Explore mapped mining locations and related
+                    geographic information.
+                </p>
+
+                <span class="link-out">
+                    Open map →
+                </span>
+
+            </a>
+
+
+            <a class="entity" href="trusts.html">
+
+                <h3>
+                    Community Trusts
+                </h3>
+
+                <p>
+                    Review community trusts, trustees, associated
+                    mines and governance relationships.
+                </p>
+
+                <span class="link-out">
+                    View trusts →
+                </span>
+
+            </a>
+
+
+            <a class="entity" href="projects.html">
+
+                <h3>
+                    Community Projects
+                </h3>
+
+                <p>
+                    Track development initiatives, funding,
+                    beneficiaries, duration and project status.
+                </p>
+
+                <span class="link-out">
+                    View projects →
+                </span>
+
+            </a>
+
+
+            <a class="entity" href="documents.html">
+
+                <h3>
+                    Evidence Register
+                </h3>
+
+                <p>
+                    Maintain a structured reference register for
+                    documents supporting important records.
+                </p>
+
+                <span class="link-out">
+                    View documents →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <div class="section-label">
+            DATA & VERIFICATION
+        </div>
+
+        <div class="card">
+
+            <h2>
+                A structured record, not yet an official register
+            </h2>
+
+            <p>
+                The Bo Tholo Hub is designed to organise information
+                from public records, government sources, mining
+                disclosures, community records and supporting
+                documentation.
+            </p>
+
+            <p>
+                Important information should be independently verified
+                before being relied upon for legal, financial,
+                regulatory or governance decisions.
+            </p>
+
+            <p class="mono">
+                Last data update:
+                <span id="last-updated">—</span>
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="reg-foot">
+
+    <div>
+        Bo Tholo Mining & Governance Hub
+    </div>
+
+    <div>
+        Initial development version
+    </div>
+
+</footer>
+
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof MINES !== "undefined") {
+        document.getElementById("mine-count").textContent =
+            MINES.length;
+    }
+
+    if (typeof TRUSTS !== "undefined") {
+        document.getElementById("trust-count").textContent =
+            TRUSTS.length;
+    }
+
+    if (typeof PROJECTS !== "undefined") {
+        document.getElementById("project-count").textContent =
+            PROJECTS.length;
+    }
+
+    if (typeof PERMITS !== "undefined") {
+        document.getElementById("permit-count").textContent =
+            PERMITS.length;
+    }
+
+    if (typeof LAST_UPDATED !== "undefined") {
+        document.getElementById("last-updated").textContent =
+            LAST_UPDATED;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
