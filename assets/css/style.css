@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Bo Tholo Mining & Governance Hub — Design Tokens
+   Palette drawn from the region's own ground: Kalahari manganese ore
+   (near-black), iron-oxide rust, sun-baked Kalahari sand, and a royal
+   indigo reserved for authority/seal moments.
+   ========================================================================== */
+ 
+:root {
+  --ore-black: #14171a;
+  --ore-black-soft: #1c2024;
+  --panel: #20242a;
+  --panel-raised: #262b32;
+  --hairline: #383e46;
+  --rust: #a6552c;
+  --rust-bright: #c76a3c;
+  --sand: #d9cbb3;
+  --sand-dim: #a89a83;
+  --indigo: #1f2a44;
+  --indigo-bright: #35477a;
+  --gold: #b8933d;
+  --gold-bright: #d4ac54;
+  --ok: #5f8a5a;
+  --pending: #c7943c;
+  --stalled: #a6472f;
+  --text-hi: #f2ede3;
+  --text-mid: #c7c0b3;
+  --text-low: #8b8477;
+ 
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+ 
+  --radius: 3px;
+  --nav-h: 64px;
+}
+ 
+* { box-sizing: border-box; }
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+  margin: 0;
+  background: var(--ore-black);
+  color: var(--text-mid);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+a { color: inherit; text-decoration: none; }
+ 
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--text-hi);
+  margin: 0 0 .4em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+ 
+.mono { font-family: var(--mono); }
+ 
+/* ---------- Letterhead nav ---------- */
+.reg-nav {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--nav-h);
+  display: flex; align-items: center; gap: 28px;
+  padding: 0 28px;
+  background: linear-gradient(180deg, var(--ore-black-soft), var(--ore-black) 90%);
+  border-bottom: 1px solid var(--hairline);
+}
+ 
+.reg-nav .seal {
+  width: 34px; height: 34px; flex: none;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display);
+  font-size: 13px; font-weight: 700; color: var(--gold-bright);
+  position: relative;
+}
+.reg-nav .seal::before {
+  content: '';
+  position: absolute; inset: 4px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: .55;
+}
+ 
+.reg-nav .brandblock { display: flex; flex-direction: column; margin-right: 8px; }
+.reg-nav .brandblock .k { font-family: var(--display); font-size: 16px; color: var(--text-hi); line-height: 1.1; }
+.reg-nav .brandblock .s { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--sand-dim); }
+ 
+.reg-nav nav { display: flex; gap: 2px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+.reg-nav nav::-webkit-scrollbar { display: none; }
+ 
+.reg-nav nav a {
+  font-size: 12.5px; letter-spacing: .03em; white-space: nowrap;
+  color: var(--text-low);
+  padding: 10px 12px;
+  border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.reg-nav nav a:hover { color: var(--sand); }
+.reg-nav nav a.active { color: var(--text-hi); border-bottom-color: var(--rust-bright); }
+.reg-nav nav a:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold-bright); outline-offset: 2px;
+}
+ 
+.reg-nav .navtoggle { display: none; }
+ 
+/* ---------- Page shell ---------- */
+main { max-width: 1180px; margin: 0 auto; padding: 40px 28px 90px; }
+ 
+.entry-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 24px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 22px; margin-bottom: 32px;
+}
+.entry-head .eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--rust-bright); margin-bottom: 8px; display: block;
+}
+.entry-head h1 { font-size: 34px; }
+.entry-head .desc { color: var(--text-mid); max-width: 60ch; margin-top: 6px; font-size: 14px; }
+.entry-head .meta { font-family: var(--mono); font-size: 11px; color: var(--text-low); text-align: right; }
+.entry-head .meta .verified {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--gold-bright); margin-top: 6px;
+}
+.entry-head .meta .verified::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold-bright);
+}
+ 
+/* ---------- Grids / cards ---------- */
+.grid { display: grid; gap: 16px; }
+.grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+ 
+@media (max-width: 900px) {
+  .grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .grid.cols-4, .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
+}
+ 
+.card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.card.raised { background: var(--panel-raised); }
+ 
+.stat .num { font-family: var(--display); font-size: 30px; color: var(--text-hi); }
+.stat .label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-low); margin-top: 4px; }
+.stat .sub { font-size: 12px; color: var(--sand-dim); margin-top: 8px; }
+ 
+.section-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-low);
+  margin: 44px 0 14px; display: flex; align-items: center; gap: 10px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+ 
+/* ---------- Entity cards (mines, trusts, kings) ---------- */
+.entity {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.entity h3 { font-size: 18px; }
+.entity .tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-family: var(--mono); font-size: 10.5px; padding: 3px 8px;
+  border-radius: 2px; border: 1px solid var(--hairline); color: var(--sand-dim);
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.tag.district { color: var(--rust-bright); border-color: var(--rust); }
+.status { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11.5px; }
+.status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; }
+.status.complete::before, .status.active::before, .status.granted::before { background: var(--ok); }
+.status.pending::before { background: var(--pending); }
+.status.stalled::before, .status.expired::before { background: var(--stalled); }
+.status.complete, .status.active, .status.granted { color: var(--ok); }
+.status.pending { color: var(--pending); }
+.status.stalled, .status.expired { color: var(--stalled); }
+ 
+.entity .link-out { margin-top: auto; font-size: 12.5px; color: var(--rust-bright); border-top: 1px solid var(--hairline); padding-top: 10px; }
+.entity .link-out:hover { color: var(--gold-bright); }
+ 
+/* ---------- Tables ---------- */
+table.reg { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.reg th {
+  text-align: left; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--text-low);
+  padding: 10px 12px; border-bottom: 1px solid var(--hairline);
+}
+table.reg td { padding: 12px; border-bottom: 1px solid var(--hairline); color: var(--text-mid); vertical-align: top; }
+table.reg tr:hover td { background: var(--panel); }
+table.reg .fig { font-family: var(--mono); color: var(--text-hi); }
+ 
+.table-wrap { overflow-x: auto; border: 1px solid var(--hairline); border-radius: var(--radius); }
+.table-wrap table.reg { border: none; }
+.table-wrap table.reg th:first-child, .table-wrap table.reg td:first-child { padding-left: 16px; }
+ 
+/* ---------- Person / exco chip ---------- */
+.exco { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.exco .person {
+  background: var(--panel-raised); border: 1px solid var(--hairline);
+  border-radius: 2px; padding: 6px 10px; font-size: 12px;
+}
+.exco .person .role { display: block; font-family: var(--mono); font-size: 9.5px; color: var(--text-low); text-transform: uppercase; }
+ 
+/* ---------- Forms (admin) ---------- */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } }
+label { display: block; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--text-low); margin-bottom: 6px; font-family: var(--mono); }
+input, select, textarea {
+  width: 100%; background: var(--ore-black-soft); border: 1px solid var(--hairline);
+  color: var(--text-hi); padding: 10px 12px; border-radius: var(--radius); font-family: var(--body); font-size: 13.5px;
+}
+textarea { min-height: 70px; resize: vertical; }
+.field { margin-bottom: 14px; }
+button.btn {
+  background: var(--rust); color: var(--text-hi); border: none;
+  padding: 11px 20px; border-radius: var(--radius); font-size: 13px;
+  letter-spacing: .03em; cursor: pointer; font-family: var(--body); font-weight: 600;
+}
+button.btn:hover { background: var(--rust-bright); }
+button.btn.ghost { background: transparent; border: 1px solid var(--hairline); color: var(--text-mid); }
+ 
+/* ---------- Footer ---------- */
+footer.reg-foot {
+  border-top: 1px solid var(--hairline); padding: 24px 28px; margin-top: 60px;
+  font-size: 11.5px; color: var(--text-low); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+}
+ 
+/* ---------- Map page ---------- */
+#gis-map { width: 100%; height: 560px; border-radius: var(--radius); border: 1px solid var(--hairline); background: var(--panel); }
+.leaflet-popup-content-wrapper { background: var(--panel-raised); color: var(--text-hi); border-radius: var(--radius); }
+.leaflet-popup-tip { background: var(--panel-raised); }
+.map-legend { display: flex; gap: 18px; margin-top: 14px; flex-wrap: wrap; font-size: 12px; }
+.map-legend .item { display: flex; align-items: center; gap: 7px; }
+.map-legend .dot { width: 10px; height: 10px; border-radius: 50%; }
+ 
+/* ---------- Home hero ---------- */
+.hero {
+  display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+  padding: 30px 0 10px;
+}
+.hero .seal-big {
+  width: 108px; height: 108px; flex: none; border-radius: 50%;
+  border: 2px solid var(--gold); position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); color: var(--gold-bright); font-size: 13px; text-align: center; line-height: 1.3;
+}
+.hero .seal-big::before { content: ''; position: absolute; inset: 8px; border: 1px solid var(--gold); border-radius: 50%; opacity: .5; }
+.hero h1 { font-size: 40px; max-width: 16ch; }
+.hero .lede { max-width: 56ch; font-size: 15px; color: var(--text-mid); margin-top: 10px; }
+ 
+.notice {
+  border-left: 3px solid var(--gold);
+  background: var(--panel); padding: 14px 18px; font-size: 13px; color: var(--sand);
+  border-radius: 0 var(--radius) var(--radius) 0; margin: 18px 0;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+ 
+/* ---------- Filter bar (permits / projects / mines) ---------- */
+.filter-bar { margin-bottom: 16px; max-width: 340px; }
+.filter-bar input { font-family: var(--mono); font-size: 13px; }
+ 
+/* ---------- Print (board pack export via browser Print > Save as PDF) ---------- */
+@media print {
+  .reg-nav, footer.reg-foot, .filter-bar, .notice, .hero .seal-big, #print-export-btn { display: none !important; }
+  body { background: #fff; color: #111; }
+  main { max-width: 100%; padding: 0; }
+  .card, .entity, .table-wrap { border-color: #ccc; background: #fff; box-shadow: none; }
+  h1, h2, h3, .entry-head h1 { color: #111; }
+  .entry-head { border-bottom-color: #999; }
+  table.reg td, table.reg th { color: #111; border-bottom-color: #ccc; }
+  a { color: #111; }
+  .status.complete, .status.active, .status.granted { color: #2d5a2a; }
+  .status.pending { color: #8a5f1a; }
+  .status.stalled, .status.expired { color: #7a2418; }
+}
