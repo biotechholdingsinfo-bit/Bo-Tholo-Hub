@@ -1,1 +1,2200 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bo Tholo Mining & Governance Hub</title>
+
+<meta name="description"
+content="Bo Tholo Mining & Governance Hub - Mining, governance, community trusts, projects and public information.">
+
+<style>
+
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #111417;
+    color: #d8d1c3;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: #171a1d;
+    border-bottom: 1px solid #3b4147;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+
+    border: 2px solid #c19a4b;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #d8b764;
+
+    font-family: Georgia, serif;
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+.brand {
+    min-width: 190px;
+}
+
+.brand-name {
+    color: #f3eee5;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.brand-subtitle {
+    color: #918b80;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    display: flex;
+    gap: 4px;
+
+    overflow-x: auto;
+
+    flex: 1;
+}
+
+nav button {
+    background: transparent;
+    color: #969087;
+
+    border: 0;
+
+    padding: 10px 11px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+}
+
+nav button:hover {
+    color: #ffffff;
+}
+
+nav button.active {
+    color: #ffffff;
+    border-bottom: 2px solid #b75f36;
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px 70px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    padding: 45px 0;
+
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+.seal {
+    width: 120px;
+    height: 120px;
+
+    border: 2px solid #c19a4b;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #d8b764;
+
+    font-family: Georgia, serif;
+
+    font-weight: bold;
+
+    position: relative;
+}
+
+.seal::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid #c19a4b;
+
+    border-radius: 50%;
+
+    opacity: .45;
+}
+
+.eyebrow {
+    color: #bd663b;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #f3eee5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    margin: 0 0 15px;
+}
+
+h2,
+h3 {
+    color: #f3eee5;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.lead {
+    max-width: 760px;
+
+    font-size: 16px;
+
+    color: #c9c1b4;
+}
+
+
+/* ================================
+   NOTICE
+================================ */
+
+.notice {
+    background: #1d2226;
+
+    border-left: 4px solid #c19a4b;
+
+    padding: 16px 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   SECTION TITLES
+================================ */
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #858077;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin: 35px 0 18px;
+}
+
+.section-title::after {
+    content: "";
+
+    height: 1px;
+
+    background: #363c42;
+
+    flex: 1;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.grid {
+    display: grid;
+
+    gap: 16px;
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+    background: #1d2226;
+
+    border: 1px solid #363d43;
+
+    padding: 20px;
+
+    border-radius: 4px;
+}
+
+.card:hover {
+    border-color: #555e67;
+}
+
+.stat {
+    cursor: pointer;
+}
+
+.stat-number {
+    color: #f3eee5;
+
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+}
+
+.stat-title {
+    color: #999287;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-size: 11px;
+}
+
+.stat-description {
+    color: #77736d;
+
+    font-size: 12px;
+
+    margin-top: 6px;
+}
+
+.entity {
+    background: #1d2226;
+
+    border: 1px solid #363d43;
+
+    padding: 20px;
+}
+
+.entity p {
+    color: #bcb5aa;
+
+    font-size: 13px;
+}
+
+.entity button {
+    background: transparent;
+
+    border: 0;
+
+    color: #c46a3d;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   TABLES
+================================ */
+
+.table-container {
+    overflow-x: auto;
+
+    background: #1d2226;
+
+    border: 1px solid #363d43;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+}
+
+th {
+    color: #888279;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-size: 10px;
+
+    text-align: left;
+
+    padding: 13px;
+
+    border-bottom: 1px solid #3a4147;
+}
+
+td {
+    padding: 13px;
+
+    border-bottom: 1px solid #30363c;
+
+    font-size: 13px;
+}
+
+tr:hover td {
+    background: #242a2f;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 10px 0 20px;
+
+    padding: 13px;
+
+    background: #171a1d;
+
+    color: #ffffff;
+
+    border: 1px solid #3b4147;
+
+    border-radius: 4px;
+}
+
+.search:focus {
+    outline: 2px solid #c19a4b;
+}
+
+
+/* ================================
+   STATUS
+================================ */
+
+.status {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+}
+
+.status.active,
+.status.granted,
+.status.complete {
+    color: #72a36d;
+}
+
+.status.pending {
+    color: #d2a74b;
+}
+
+
+/* ================================
+   MAP
+================================ */
+
+.map {
+    min-height: 480px;
+
+    background-color: #1a1f23;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    border: 1px solid #363d43;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.map-heading {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 14px;
+
+    background: rgba(17,20,23,.92);
+
+    border: 1px solid #363d43;
+
+    color: #d8d1c3;
+
+    font-size: 12px;
+}
+
+.marker {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: #bd663b;
+
+    border: 3px solid #eee;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.marker span {
+    position: absolute;
+
+    left: 20px;
+
+    top: -5px;
+
+    white-space: nowrap;
+
+    background: #111417;
+
+    border: 1px solid #3b4147;
+
+    padding: 5px 8px;
+
+    color: #d8d1c3;
+
+    font-size: 10px;
+}
+
+.marker.one {
+    left: 42%;
+    top: 42%;
+}
+
+.marker.two {
+    left: 62%;
+    top: 56%;
+}
+
+.marker.three {
+    left: 30%;
+    top: 30%;
+
+    background: #d2a74b;
+}
+
+
+/* ================================
+   CONTACTS
+================================ */
+
+.contact {
+    background: #1d2226;
+
+    border-left: 3px solid #bd663b;
+
+    padding: 18px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    border-top: 1px solid #363d43;
+
+    background: #171a1d;
+
+    padding: 25px 20px;
+
+    color: #817c74;
+
+    font-size: 11px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        flex: 1;
+    }
+
+    nav {
+        width: 100%;
+
+        flex-basis: 100%;
+
+        order: 3;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .hero {
+        padding: 25px 0;
+    }
+
+    .seal {
+        width: 100px;
+        height: 100px;
+    }
+
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+
+@media (max-width: 500px) {
+
+    nav button {
+        padding: 9px 8px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* ================================
+   PRINT
+================================ */
+
+@media print {
+
+    header,
+    footer {
+        display: none;
+    }
+
+    .page {
+        display: block;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+    <div class="logo">
+        BT
+    </div>
+
+    <div class="brand">
+
+        <div class="brand-name">
+            Bo Tholo
+        </div>
+
+        <div class="brand-subtitle">
+            Mining & Governance Hub
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <button class="active" data-page="home">
+            Home
+        </button>
+
+        <button data-page="leadership">
+            Leadership
+        </button>
+
+        <button data-page="demographics">
+            Demographics
+        </button>
+
+        <button data-page="mines">
+            Mines
+        </button>
+
+        <button data-page="map">
+            Map
+        </button>
+
+        <button data-page="trusts">
+            Trusts
+        </button>
+
+        <button data-page="projects">
+            Projects
+        </button>
+
+        <button data-page="permits">
+            Permits
+        </button>
+
+        <button data-page="documents">
+            Documents
+        </button>
+
+        <button data-page="contacts">
+            Contacts
+        </button>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="seal">
+            BO<br>
+            THOLO
+        </div>
+
+        <div>
+
+            <div class="eyebrow">
+                NORTHERN CAPE · PUBLIC INFORMATION HUB
+            </div>
+
+            <h1>
+                Mining, Governance & Community Information
+            </h1>
+
+            <p class="lead">
+                A structured platform bringing together mining
+                operations, traditional leadership, community trusts,
+                development projects, permits and public information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>Development version:</strong>
+
+        This website is an initial information platform.
+        Some records are placeholders and require verification
+        against authoritative sources before they are relied upon
+        for legal, financial, regulatory or governance decisions.
+
+    </div>
+
+
+    <div class="section-title">
+        PLATFORM OVERVIEW
+    </div>
+
+
+    <div class="grid grid-4">
+
+        <div class="card stat" data-page-link="mines">
+
+            <div class="stat-number">
+                3
+            </div>
+
+            <div class="stat-title">
+                Mining Records
+            </div>
+
+            <div class="stat-description">
+                Mining and prospecting information
+            </div>
+
+        </div>
+
+
+        <div class="card stat" data-page-link="trusts">
+
+            <div class="stat-number">
+                2
+            </div>
+
+            <div class="stat-title">
+                Community Trusts
+            </div>
+
+            <div class="stat-description">
+                Community governance structures
+            </div>
+
+        </div>
+
+
+        <div class="card stat" data-page-link="projects">
+
+            <div class="stat-number">
+                3
+            </div>
+
+            <div class="stat-title">
+                Development Projects
+            </div>
+
+            <div class="stat-description">
+                Community development initiatives
+            </div>
+
+        </div>
+
+
+        <div class="card stat" data-page-link="permits">
+
+            <div class="stat-number">
+                3
+            </div>
+
+            <div class="stat-title">
+                Permit Records
+            </div>
+
+            <div class="stat-description">
+                Mining and prospecting records
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-title">
+        EXPLORE THE HUB
+    </div>
+
+
+    <div class="grid grid-3">
+
+
+        <div class="entity">
+
+            <h3>
+                Traditional Leadership
+            </h3>
+
+            <p>
+                Reference information relating to traditional
+                leadership and governance structures.
+            </p>
+
+            <button data-page-link="leadership">
+                View leadership →
+            </button>
+
+        </div>
+
+
+        <div class="entity">
+
+            <h3>
+                Mining Operations
+            </h3>
+
+            <p>
+                Browse mining and prospecting records,
+                operators, commodities and districts.
+            </p>
+
+            <button data-page-link="mines">
+                View mines →
+            </button>
+
+        </div>
+
+
+        <div class="entity">
+
+            <h3>
+                Community Trusts
+            </h3>
+
+            <p>
+                Review community trusts and associated
+                governance relationships.
+            </p>
+
+            <button data-page-link="trusts">
+                View trusts →
+            </button>
+
+        </div>
+
+
+        <div class="entity">
+
+            <h3>
+                Development Projects
+            </h3>
+
+            <p>
+                Track development initiatives and recorded
+                community beneficiaries.
+            </p>
+
+            <button data-page-link="projects">
+                View projects →
+            </button>
+
+        </div>
+
+
+        <div class="entity">
+
+            <h3>
+                Mining Permits
+            </h3>
+
+            <p>
+                Structured reference information for mining
+                and prospecting rights.
+            </p>
+
+            <button data-page-link="permits">
+                View permits →
+            </button>
+
+        </div>
+
+
+        <div class="entity">
+
+            <h3>
+                Evidence Register
+            </h3>
+
+            <p>
+                Reference records for documents supporting
+                important information.
+            </p>
+
+            <button data-page-link="documents">
+                View documents →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-title">
+        DATA PRINCIPLES
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            Structured information with verification
+        </h2>
+
+        <p>
+            The long-term objective is to provide a transparent
+            information resource connecting mining activity,
+            community structures and governance information.
+        </p>
+
+        <p>
+            Important records should eventually include a source,
+            reference number, verification date and confidence status.
+        </p>
+
+        <p>
+            <strong>Last data update:</strong>
+            12 August 2026
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- LEADERSHIP -->
+
+<section id="leadership" class="page">
+
+    <div class="eyebrow">
+        GOVERNANCE
+    </div>
+
+    <h1>
+        Traditional Leadership
+    </h1>
+
+    <p>
+        Reference information concerning traditional leadership
+        and governance structures.
+    </p>
+
+
+    <div class="grid grid-2">
+
+        <div class="card">
+
+            <h2>
+                Barolong Boo Tholo
+            </h2>
+
+            <h3>
+                Leadership Record
+            </h3>
+
+            <p>
+                Traditional leadership reference for the Bo Tholo
+                information platform.
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                Documentation requires verification.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                Governance Records
+            </h2>
+
+            <p>
+                Future versions can connect recognition records,
+                community structures, succession information and
+                verified governance documents.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEMOGRAPHICS -->
+
+<section id="demographics" class="page">
+
+    <div class="eyebrow">
+        POPULATION & COMMUNITY
+    </div>
+
+    <h1>
+        Demographics
+    </h1>
+
+    <p>
+        Demographic information should be populated using verified
+        Statistics South Africa and municipal sources.
+    </p>
+
+
+    <div class="grid grid-2">
+
+        <div class="card">
+
+            <h2>
+                Ga-Segonyana
+            </h2>
+
+            <p>
+                Population: Development placeholder
+            </p>
+
+            <p>
+                Households: Development placeholder
+            </p>
+
+            <p>
+                Unemployment: Development placeholder
+            </p>
+
+            <p>
+                <strong>Source status:</strong>
+                Requires verification.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                John Taolo Gaetsewe
+            </h2>
+
+            <p>
+                District-level demographic information.
+            </p>
+
+            <p>
+                Population: Development placeholder
+            </p>
+
+            <p>
+                Households: Development placeholder
+            </p>
+
+            <p>
+                <strong>Source status:</strong>
+                Requires verification.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MINES -->
+
+<section id="mines" class="page">
+
+    <div class="eyebrow">
+        MINING REGISTER
+    </div>
+
+    <h1>
+        Mining Operations
+    </h1>
+
+    <p>
+        Development records currently contained in the platform.
+    </p>
+
+
+    <input
+        class="search"
+        id="mineSearch"
+        type="search"
+        placeholder="Search mining records..."
+    >
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Mine
+                    </th>
+
+                    <th>
+                        Commodity
+                    </th>
+
+                    <th>
+                        Operator
+                    </th>
+
+                    <th>
+                        District
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="mineRows">
+
+                <tr>
+
+                    <td>
+                        Kalahari Manganese Mine
+                    </td>
+
+                    <td>
+                        Manganese
+                    </td>
+
+                    <td>
+                        Operator placeholder
+                    </td>
+
+                    <td>
+                        John Taolo Gaetsewe
+                    </td>
+
+                    <td>
+                        <span class="status active">
+                            Active
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Ga-Segonyana Iron Ore Operation
+                    </td>
+
+                    <td>
+                        Iron Ore
+                    </td>
+
+                    <td>
+                        Operator placeholder
+                    </td>
+
+                    <td>
+                        Ga-Segonyana
+                    </td>
+
+                    <td>
+                        <span class="status active">
+                            Active
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Legacy Prospecting Site
+                    </td>
+
+                    <td>
+                        Manganese
+                    </td>
+
+                    <td>
+                        Operator placeholder
+                    </td>
+
+                    <td>
+                        John Taolo Gaetsewe
+                    </td>
+
+                    <td>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- MAP -->
+
+<section id="map" class="page">
+
+    <div class="eyebrow">
+        GEOGRAPHIC INFORMATION
+    </div>
+
+    <h1>
+        Mining Map
+    </h1>
+
+    <p>
+        The locations shown below are illustrative development
+        locations and must be replaced with verified coordinates
+        before being used operationally.
+    </p>
+
+
+    <div class="map">
+
+        <div class="map-heading">
+            Northern Cape · Development Map
+        </div>
+
+
+        <div class="marker one">
+            <span>
+                Manganese Operation
+            </span>
+        </div>
+
+
+        <div class="marker two">
+            <span>
+                Iron Ore Operation
+            </span>
+        </div>
+
+
+        <div class="marker three">
+            <span>
+                Prospecting Site
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRUSTS -->
+
+<section id="trusts" class="page">
+
+    <div class="eyebrow">
+        COMMUNITY GOVERNANCE
+    </div>
+
+    <h1>
+        Community Trusts
+    </h1>
+
+
+    <div class="grid grid-2">
+
+
+        <div class="card">
+
+            <h2>
+                Bo Tholo Community Development Trust
+            </h2>
+
+            <p>
+                <strong>Status:</strong>
+                Development placeholder.
+            </p>
+
+            <p>
+                Associated mining operation:
+                Kalahari Manganese Mine.
+            </p>
+
+            <p>
+                Trustee information should only be published after
+                appropriate verification and confirmation that
+                publication is lawful and appropriate.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                Ga-Segonyana Beneficiary Trust
+            </h2>
+
+            <p>
+                <strong>Status:</strong>
+                Development placeholder.
+            </p>
+
+            <p>
+                Associated mining operation:
+                Ga-Segonyana Iron Ore Operation.
+            </p>
+
+            <p>
+                Trust documentation should be verified before
+                publication.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="page">
+
+    <div class="eyebrow">
+        COMMUNITY DEVELOPMENT
+    </div>
+
+    <h1>
+        Development Projects
+    </h1>
+
+
+    <input
+        class="search"
+        id="projectSearch"
+        type="search"
+        placeholder="Search projects..."
+    >
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Project
+                    </th>
+
+                    <th>
+                        Funding
+                    </th>
+
+                    <th>
+                        Year
+                    </th>
+
+                    <th>
+                        Beneficiaries
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="projectRows">
+
+                <tr>
+
+                    <td>
+                        Bo Tholo Bursary Programme
+                    </td>
+
+                    <td>
+                        Development placeholder
+                    </td>
+
+                    <td>
+                        2024
+                    </td>
+
+                    <td>
+                        Development placeholder
+                    </td>
+
+                    <td>
+                        <span class="status active">
+                            Active
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Rural Roads Access Upgrade
+                    </td>
+
+                    <td>
+                        Development placeholder
+                    </td>
+
+                    <td>
+                        2023
+                    </td>
+
+                    <td>
+                        Surrounding communities
+                    </td>
+
+                    <td>
+                        <span class="status complete">
+                            Complete
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Clinic Equipment & Water Infrastructure
+                    </td>
+
+                    <td>
+                        Development placeholder
+                    </td>
+
+                    <td>
+                        2025
+                    </td>
+
+                    <td>
+                        Community clinics
+                    </td>
+
+                    <td>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- PERMITS -->
+
+<section id="permits" class="page">
+
+    <div class="eyebrow">
+        REGULATORY REFERENCE
+    </div>
+
+    <h1>
+        Mining & Prospecting Permits
+    </h1>
+
+
+    <input
+        class="search"
+        id="permitSearch"
+        type="search"
+        placeholder="Search permits..."
+    >
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Holder
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Commodity
+                    </th>
+
+                    <th>
+                        Area
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="permitRows">
+
+                <tr>
+
+                    <td>
+                        Operator placeholder
+                    </td>
+
+                    <td>
+                        Mining Right
+                    </td>
+
+                    <td>
+                        Manganese
+                    </td>
+
+                    <td>
+                        Ga-Segonyana
+                    </td>
+
+                    <td>
+                        <span class="status granted">
+                            Granted
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Operator placeholder
+                    </td>
+
+                    <td>
+                        Mining Right
+                    </td>
+
+                    <td>
+                        Iron Ore
+                    </td>
+
+                    <td>
+                        Ga-Segonyana
+                    </td>
+
+                    <td>
+                        <span class="status granted">
+                            Granted
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Applicant placeholder
+                    </td>
+
+                    <td>
+                        Prospecting Right
+                    </td>
+
+                    <td>
+                        Manganese
+                    </td>
+
+                    <td>
+                        Joe Morolong
+                    </td>
+
+                    <td>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- DOCUMENTS -->
+
+<section id="documents" class="page">
+
+    <div class="eyebrow">
+        EVIDENCE REGISTER
+    </div>
+
+    <h1>
+        Documents
+    </h1>
+
+    <div class="notice">
+
+        This public GitHub version should contain only documents
+        that are appropriate for public disclosure.
+
+        Do not upload confidential agreements, banking information,
+        passwords, API keys, identity documents or private records.
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Document
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Government correspondence
+                    </td>
+
+                    <td>
+                        Correspondence
+                    </td>
+
+                    <td>
+                        Development record
+                    </td>
+
+                    <td>
+                        Reference
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Mining SLP agreement
+                    </td>
+
+                    <td>
+                        Agreement
+                    </td>
+
+                    <td>
+                        Development record
+                    </td>
+
+                    <td>
+                        Verify publication status
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Community trust deed
+                    </td>
+
+                    <td>
+                        Trust document
+                    </td>
+
+                    <td>
+                        Development record
+                    </td>
+
+                    <td>
+                        Restricted / verify
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTS -->
+
+<section id="contacts" class="page">
+
+    <div class="eyebrow">
+        ENGAGEMENT DIRECTORY
+    </div>
+
+    <h1>
+        Contacts
+    </h1>
+
+
+    <div class="grid grid-2">
+
+
+        <div class="contact">
+
+            <h3>
+                Community Liaison
+            </h3>
+
+            <p>
+                Mining company community liaison contact.
+            </p>
+
+            <p>
+                <strong>
+                    Contact information:
+                </strong>
+                To be verified.
+            </p>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h3>
+                Regulatory Reference
+            </h3>
+
+            <p>
+                Department of Mineral and Petroleum Resources.
+            </p>
+
+            <p>
+                Official contact information should be added from
+                the department's verified public channels.
+            </p>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h3>
+                Traditional Governance
+            </h3>
+
+            <p>
+                Traditional leadership administrative contact.
+            </p>
+
+            <p>
+                Contact information:
+                To be verified.
+            </p>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h3>
+                Community Trust
+            </h3>
+
+            <p>
+                Community development trust contact.
+            </p>
+
+            <p>
+                Contact information:
+                To be verified.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="footer-inner">
+
+    <div>
+        <strong>
+            Bo Tholo Mining & Governance Hub
+        </strong>
+    </div>
+
+    <div>
+        Development version · Information requires verification
+    </div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* ============================================================
+   SIMPLE PAGE NAVIGATION
+============================================================ */
+
+function openPage(pageName) {
+
+    var pages = document.querySelectorAll(".page");
+
+    for (var i = 0; i < pages.length; i++) {
+
+        pages[i].classList.remove("active");
+
+    }
+
+
+    var buttons =
+        document.querySelectorAll("nav button");
+
+    for (var j = 0; j < buttons.length; j++) {
+
+        buttons[j].classList.remove("active");
+
+    }
+
+
+    var selectedPage =
+        document.getElementById(pageName);
+
+    if (selectedPage) {
+
+        selectedPage.classList.add("active");
+
+    }
+
+
+    var selectedButton =
+        document.querySelector(
+            'nav button[data-page="' +
+            pageName +
+            '"]'
+        );
+
+    if (selectedButton) {
+
+        selectedButton.classList.add("active");
+
+    }
+
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* Navigation buttons */
+
+var navigationButtons =
+    document.querySelectorAll("nav button");
+
+for (var i = 0; i < navigationButtons.length; i++) {
+
+    navigationButtons[i].addEventListener(
+        "click",
+        function() {
+
+            openPage(this.getAttribute("data-page"));
+
+        }
+    );
+
+}
+
+
+/* Dashboard cards and links */
+
+var pageLinks =
+    document.querySelectorAll("[data-page-link]");
+
+for (var k = 0; k < pageLinks.length; k++) {
+
+    pageLinks[k].addEventListener(
+        "click",
+        function() {
+
+            openPage(
+                this.getAttribute("data-page-link")
+            );
+
+        }
+    );
+
+}
+
+
+/* ============================================================
+   SEARCH
+============================================================ */
+
+function addSearch(inputId, rowsId) {
+
+    var input =
+        document.getElementById(inputId);
+
+    var rows =
+        document.getElementById(rowsId);
+
+    if (!input || !rows) {
+        return;
+    }
+
+
+    input.addEventListener(
+        "input",
+        function() {
+
+            var query =
+                input.value.toLowerCase().trim();
+
+            var tableRows =
+                rows.querySelectorAll("tr");
+
+
+            for (var i = 0; i < tableRows.length; i++) {
+
+                var text =
+                    tableRows[i]
+                    .textContent
+                    .toLowerCase();
+
+                if (text.indexOf(query) !== -1) {
+
+                    tableRows[i].style.display = "";
+
+                } else {
+
+                    tableRows[i].style.display = "none";
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+addSearch(
+    "mineSearch",
+    "mineRows"
+);
+
+
+addSearch(
+    "projectSearch",
+    "projectRows"
+);
+
+
+addSearch(
+    "permitSearch",
+    "permitRows"
+);
+
+
+/* ============================================================
+   START
+============================================================ */
+
+openPage("home");
+
+</script>
+
+
+</body>
+</html>
+```
 
